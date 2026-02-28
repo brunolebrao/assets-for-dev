@@ -2,9 +2,104 @@
   "home": {
     "title": "Fast tools for developers",
     "subtitle": "Compress images, generate assets, and optimize your workflow — in one place.",
-    "cta": "Open compressor"
+    "toolsHeading": "All tools"
   },
   "nav": {
     "tools": "Tools"
+  },
+  "tools": {
+    "imageCompressor": {
+      "title": "Image Compressor",
+      "description": "Reduce image file sizes with format and quality controls."
+    },
+    "imageConverter": {
+      "title": "Image Converter",
+      "description": "Convert images between JPEG, PNG, WebP, and AVIF."
+    },
+    "blurPlaceholder": {
+      "title": "Placeholder Generator",
+      "description": "Generate blur placeholders and CSS shimmer for image loading."
+    },
+    "jsonYaml": {
+      "title": "JSON / YAML Formatter",
+      "description": "Format, minify, validate, and convert between JSON and YAML."
+    },
+    "qrCode": {
+      "title": "QR Code Generator",
+      "description": "Create custom QR codes with adjustable colors and sizes."
+    }
+  },
+  "imageCompressor": {
+    "heading": "Image Compressor",
+    "subtitle": "Choose format and quality, preview before/after, and download files.",
+    "files": "Files",
+    "format": "Format",
+    "quality": "Quality",
+    "qualityLow": "Low",
+    "qualityMedium": "Medium",
+    "qualityHigh": "High",
+    "compress": "Compress",
+    "processing": "Processing...",
+    "original": "Original",
+    "compressed": "Compressed",
+    "download": "Download"
+  },
+  "imageConverter": {
+    "heading": "Image Converter",
+    "subtitle": "Convert images between formats at maximum quality.",
+    "files": "Files",
+    "targetFormat": "Output format",
+    "convert": "Convert",
+    "processing": "Converting...",
+    "original": "Original",
+    "converted": "Converted",
+    "download": "Download",
+    "downloadAll": "Download all as ZIP",
+    "formatChange": "{original} → {target}"
+  },
+  "blurPlaceholder": {
+    "heading": "Placeholder Generator",
+    "subtitle": "Upload images and generate ready-to-use placeholders.",
+    "files": "Files",
+    "generate": "Generate Placeholders",
+    "processing": "Generating...",
+    "blurDataUrl": "Blur Data URL",
+    "cssShimmer": "CSS Shimmer",
+    "tinyImage": "Tiny Image",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "preview": "Preview",
+    "codeSnippet": "Code"
+  },
+  "jsonYaml": {
+    "heading": "JSON / YAML Formatter",
+    "subtitle": "Format, minify, validate, and convert between JSON and YAML.",
+    "input": "Input",
+    "output": "Output",
+    "format": "Format",
+    "minify": "Minify",
+    "validate": "Validate",
+    "convert": "Convert to {target}",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "uploadFile": "Upload file",
+    "clear": "Clear",
+    "valid": "Valid",
+    "invalid": "Invalid",
+    "errorAtLine": "Error at line {line}: {message}",
+    "autoDetected": "Detected: {format}"
+  },
+  "qrCode": {
+    "heading": "QR Code Generator",
+    "subtitle": "Create custom QR codes and download as PNG or SVG.",
+    "textLabel": "Text or URL",
+    "textPlaceholder": "Enter a text or URL...",
+    "size": "Size",
+    "errorCorrection": "Error correction",
+    "foreground": "Code color",
+    "background": "Background color",
+    "downloadPng": "Download PNG",
+    "downloadSvg": "Download SVG",
+    "preview": "Preview"
   }
 }

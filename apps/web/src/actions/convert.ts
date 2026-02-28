@@ -10,29 +10,21 @@ const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/avif"] as
 
 const optionsSchema = z.object({
   format: z.enum(["jpeg", "png", "webp", "avif"]),
-  quality: z.enum(["low", "medium", "high"])
 });
 
-const qualityMap: Record<z.infer<typeof optionsSchema>["quality"], number> = {
-  low: 40,
-  medium: 65,
-  high: 85
-};
-
-// Type re-exported from a separate module for client imports
-export type CompressResult = {
+export type ConvertResult = {
   name: string;
+  originalFormat: string;
+  targetFormat: string;
   beforeSize: number;
   afterSize: number;
-  format: string;
   dataUrl: string;
 };
 
-export async function compress(formData: FormData): Promise<CompressResult[]> {
+export async function convert(formData: FormData): Promise<ConvertResult[]> {
   const format = String(formData.get("format") ?? "webp");
-  const quality = String(formData.get("quality") ?? "medium");
 
-  const parsed = optionsSchema.safeParse({ format, quality });
+  const parsed = optionsSchema.safeParse({ format });
   if (!parsed.success) {
     throw new Error("Opções inválidas");
   }
@@ -41,7 +33,7 @@ export async function compress(formData: FormData): Promise<CompressResult[]> {
   if (files.length === 0) return [];
   if (files.length > MAX_FILES) throw new Error(`Máximo de ${MAX_FILES} arquivos`);
 
-  const results: CompressResult[] = [];
+  const results: ConvertResult[] = [];
 
   for (const file of files) {
     if (!ALLOWED_TYPES.includes(file.type as any)) {
@@ -52,23 +44,24 @@ export async function compress(formData: FormData): Promise<CompressResult[]> {
     }
 
     const inputBuffer = Buffer.from(await file.arrayBuffer());
-    const q = qualityMap[parsed.data.quality];
+    const originalFormat = file.type.replace("image/", "");
 
     let pipeline = sharp(inputBuffer);
-    if (parsed.data.format === "jpeg") pipeline = pipeline.jpeg({ quality: q });
-    if (parsed.data.format === "webp") pipeline = pipeline.webp({ quality: q });
-    if (parsed.data.format === "avif") pipeline = pipeline.avif({ quality: q });
-    if (parsed.data.format === "png") pipeline = pipeline.png({ compressionLevel: 9 });
+    if (parsed.data.format === "jpeg") pipeline = pipeline.jpeg({ quality: 100 });
+    if (parsed.data.format === "webp") pipeline = pipeline.webp({ lossless: true });
+    if (parsed.data.format === "avif") pipeline = pipeline.avif({ lossless: true });
+    if (parsed.data.format === "png") pipeline = pipeline.png();
 
     const outputBuffer = await pipeline.toBuffer();
     const dataUrl = `data:image/${parsed.data.format};base64,${outputBuffer.toString("base64")}`;
 
     results.push({
       name: file.name,
+      originalFormat,
+      targetFormat: parsed.data.format,
       beforeSize: file.size,
       afterSize: outputBuffer.length,
-      format: parsed.data.format,
-      dataUrl
+      dataUrl,
     });
   }
 

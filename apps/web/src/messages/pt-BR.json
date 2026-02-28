@@ -2,9 +2,104 @@
   "home": {
     "title": "Ferramentas rápidas para devs",
     "subtitle": "Compacte imagens, gere assets e otimize seu fluxo — tudo em um só lugar.",
-    "cta": "Abrir compactador"
+    "toolsHeading": "Todas as ferramentas"
   },
   "nav": {
     "tools": "Ferramentas"
+  },
+  "tools": {
+    "imageCompressor": {
+      "title": "Compactador de Imagem",
+      "description": "Reduza o tamanho de imagens com controle de formato e qualidade."
+    },
+    "imageConverter": {
+      "title": "Conversor de Imagem",
+      "description": "Converta imagens entre JPEG, PNG, WebP e AVIF."
+    },
+    "blurPlaceholder": {
+      "title": "Gerador de Placeholder",
+      "description": "Gere blur placeholders e CSS shimmer para carregamento de imagens."
+    },
+    "jsonYaml": {
+      "title": "Formatador JSON / YAML",
+      "description": "Formate, minifique, valide e converta entre JSON e YAML."
+    },
+    "qrCode": {
+      "title": "Gerador de QR Code",
+      "description": "Crie QR codes personalizados com cores e tamanhos ajustáveis."
+    }
+  },
+  "imageCompressor": {
+    "heading": "Compactador de Imagem",
+    "subtitle": "Escolha formato e qualidade, visualize o antes/depois e baixe os arquivos.",
+    "files": "Arquivos",
+    "format": "Formato",
+    "quality": "Qualidade",
+    "qualityLow": "Baixa",
+    "qualityMedium": "Média",
+    "qualityHigh": "Alta",
+    "compress": "Compactar",
+    "processing": "Processando...",
+    "original": "Original",
+    "compressed": "Comprimida",
+    "download": "Baixar"
+  },
+  "imageConverter": {
+    "heading": "Conversor de Imagem",
+    "subtitle": "Converta imagens entre formatos com qualidade máxima.",
+    "files": "Arquivos",
+    "targetFormat": "Formato de saída",
+    "convert": "Converter",
+    "processing": "Convertendo...",
+    "original": "Original",
+    "converted": "Convertida",
+    "download": "Baixar",
+    "downloadAll": "Baixar tudo como ZIP",
+    "formatChange": "{original} → {target}"
+  },
+  "blurPlaceholder": {
+    "heading": "Gerador de Placeholder",
+    "subtitle": "Faça upload de imagens e gere placeholders prontos para usar.",
+    "files": "Arquivos",
+    "generate": "Gerar Placeholders",
+    "processing": "Gerando...",
+    "blurDataUrl": "Blur Data URL",
+    "cssShimmer": "CSS Shimmer",
+    "tinyImage": "Tiny Image",
+    "copy": "Copiar",
+    "copied": "Copiado!",
+    "preview": "Preview",
+    "codeSnippet": "Código"
+  },
+  "jsonYaml": {
+    "heading": "Formatador JSON / YAML",
+    "subtitle": "Formate, minifique, valide e converta entre JSON e YAML.",
+    "input": "Entrada",
+    "output": "Saída",
+    "format": "Formatar",
+    "minify": "Minificar",
+    "validate": "Validar",
+    "convert": "Converter para {target}",
+    "copy": "Copiar",
+    "copied": "Copiado!",
+    "uploadFile": "Carregar arquivo",
+    "clear": "Limpar",
+    "valid": "Válido",
+    "invalid": "Inválido",
+    "errorAtLine": "Erro na linha {line}: {message}",
+    "autoDetected": "Detectado: {format}"
+  },
+  "qrCode": {
+    "heading": "Gerador de QR Code",
+    "subtitle": "Crie QR codes personalizados e baixe em PNG ou SVG.",
+    "textLabel": "Texto ou URL",
+    "textPlaceholder": "Digite um texto ou URL...",
+    "size": "Tamanho",
+    "errorCorrection": "Correção de erro",
+    "foreground": "Cor do código",
+    "background": "Cor de fundo",
+    "downloadPng": "Baixar PNG",
+    "downloadSvg": "Baixar SVG",
+    "preview": "Preview"
   }
 }
